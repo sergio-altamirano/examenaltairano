@@ -1,43 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:examen/principal.dart';
+import 'package:examen/contenedor1.dart';
+import 'package:examen/drawer11.dart';
+import 'package:examen/stack21.dart';
+import 'package:examen/botton31.dart';
+import 'package:examen/cliprret41.dart';
+import 'package:examen/switches51.dart';
+import 'package:examen/selectable71.dart';
+import 'package:examen/drggable81.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Actividad());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class Actividad extends StatelessWidget {
+  const Actividad({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      title: 'Widgets',
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const Principal(),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+        '/pantalla2': (context) => MyContainer(),
+        '/pantalla3': (context) => const MyDrawer(),
+        '/pantalla4': (context) => const MyStack(),
+        '/pantalla5': (context) => const MyRawMaterialButton(),
+        '/pantalla6': (context) => const MyClipRRect(),
+        '/pantalla7': (context) => const MySwitches(),
+        '/pantalla9': (context) => const MySelectableText(),
+        '/pantalla10': (context) => const MyDraggable(),
+      },
     );
   }
 }
